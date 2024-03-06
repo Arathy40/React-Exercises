@@ -1,0 +1,47 @@
+This is a code to perform function components. Here one function is used to output two different output using props. Name of the contact dynamically assigns as "Email contact page" and "Personal Contact Page". Email contact page will be written in red colour and perosnal contact page will be shown in green colour. 
+**********************************************Contact.js**********************************************
+import React from 'react';
+import './Contact.css';
+
+function Contact(props){
+  
+    return(
+            <div style={props.id}>
+
+    
+            <h1>{props.name} Contact Page</h1>
+
+            <label>Email id </label>
+            <input type="text" />
+            <br/>
+            <br/>
+            <label>Message </label>
+            <textarea placeholder='type your message here'></textarea>
+            <br/>
+            <br/>
+            <button style={props.id}>Send</button>
+        </div>
+    )
+}
+
+export default Contact;
+
+**********************************************App.js***********************************************
+
+import React from 'react';
+import './App.css';
+import Contact from './Contact';
+function greet(name){
+  return <h3>Hello {name}</h3>
+}
+function App() {
+   return (
+    <div> 
+      <Contact id={{color:"red"}} name="Email "/>
+      <Contact id={{color:"Green"}} name="Personal "/>
+    </div>
+  );
+}
+
+export default App;
+ 
